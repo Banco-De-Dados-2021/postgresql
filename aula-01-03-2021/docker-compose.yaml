@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:10
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+
+  pgadmin:
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "rafael.rasso@faculdadefacec.edu.br"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+    driver: bridge
