@@ -1,2 +1,0 @@
-- Para visualizar o diagrama da pasta diagrams importe o arquivo no programa draw.io
-- Para subir um banco de dados postgres usando docker e docker-compose utilze o arquivo docker-compose.yaml
