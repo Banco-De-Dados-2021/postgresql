@@ -1,0 +1,9 @@
+-- Operador BETWEEN, filtra os resultados para um determinado periodo ou intervalo de valor.
+SELECT * FROM CLIENTE
+        WHERE NASCIMENTO BETWEEN '1970-01-01' AND '1970-31-12'
+
+SELECT * FROM CLIENTE
+        WHERE NASCIMENTO NOT BETWEEN '1970-01-01' AND '1970-31-12'
+
+SELECT * FROM CLIENTE
+        WHERE ID BETWEEN 1 AND 5
