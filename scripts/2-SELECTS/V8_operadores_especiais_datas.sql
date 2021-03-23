@@ -21,6 +21,11 @@ select extract(day from current_date); -- vai extrarir o dia da data corrente
 select extract(month from current_date); -- vai extrarir o mes da data corrente
 select extract(year from current_date); -- vai extrarir o dia da data corrente
 
+select current_date as "Data de Hoje",
+		extract(day from current_date) as "Dia de Hoje",
+		extract(month from current_date) as "Mes corrente",
+		extract(year from current_date) as "Ano corrente";
+
 -- Função date_part: fazem as mesmas coisas da extract mas de uma forma diferente
 select date_part('day', current_date);
 select date_part('month', current_date);
