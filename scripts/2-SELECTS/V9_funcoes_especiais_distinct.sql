@@ -21,3 +21,7 @@ select distinct (unidade_medida) from produto;
 -- Retorna todas unidades de medidas de produtos vencidos
 select distinct (unidade_medida)  from produto
     where vencimento < current_date
+
+-- Quando a distincao for realizada em uma ou mais colunas que possuem valores nulos, estes
+-- serão distinguidos e exibidos no retorno juntamente com os valores de colunas não nulas.
+select distinct (fornecedor) from produto;
