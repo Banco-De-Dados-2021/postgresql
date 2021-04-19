@@ -14,7 +14,7 @@ services:
 
   pgadmin:
     container_name: pgadmin
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4:5.1
     environment:
       PGADMIN_DEFAULT_EMAIL: "rafael.rasso@faculdadefacec.edu.br"
       PGADMIN_DEFAULT_PASSWORD: "postgres"

@@ -1,6 +1,7 @@
 create table "Cliente"
 (
     id          int         not null primary key,
+    nome        varchar(50) not null,
     cpf         varchar(11) not null,
     rg          varchar(9)  not null,
     nascimento  date        null,
@@ -130,3 +131,4 @@ ALTER TABLE "FornecedorProduto"
     ADD CONSTRAINT fk_fornecedor_produto_fornecedor
         FOREIGN KEY (fornecedor_fk)
             REFERENCES "Fornecedor" (id);
+
