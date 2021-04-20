@@ -1,3 +1,14 @@
+drop table if exists "FornecedorProduto";
+drop table if exists "Fornecedor";
+drop table if exists "Estoque";
+drop table if exists "Produto";
+drop table if exists "UnidadeMedida";
+drop table if exists "Setor";
+drop table if exists "Cliente";
+drop table if exists "Endereco";
+drop table if exists "Cidade";
+drop table if exists "Estado";
+
 create table "Cliente"
 (
     id          int         not null primary key,
@@ -42,6 +53,7 @@ create table "Estado"
     nome varchar(100) not null,
     uf   char(2)      not null
 );
+
 
 
 
@@ -104,6 +116,7 @@ ALTER TABLE "Estoque"
             REFERENCES "Produto" (id);
 
 
+
 create table "Fornecedor"
 (
     id          int          not null primary key,
@@ -134,7 +147,6 @@ ALTER TABLE "FornecedorProduto"
     ADD CONSTRAINT fk_fornecedor_produto_fornecedor
         FOREIGN KEY (fornecedor_fk)
             REFERENCES "Fornecedor" (id);
-
 
 insert into "Estado" (id, nome, uf)
 values (1, 'Acre', 'AC'),
