@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+
+  server-postgres-1:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: "usr-postgres-1"
+      POSTGRES_PASSWORD: "usr-postgres-1"
+      POSTGRES_DB: "db-postgres-1"
+    ports:
+      - "5432:5432"
+    networks:
+      - pg-network
+
+  server-postgres-2:
+    image: postgres:10
+    environment:
+      POSTGRES_USER: "usr-postgres-2"
+      POSTGRES_PASSWORD: "usr-postgres-2"
+      POSTGRES_DB: "db-postgres-2"
+    ports:
+      - "5433:5432"
+    networks:
+      - pg-network
+
+  pgadmin:
+    image: dpage/pgadmin4:5.2
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "rafael.rasso@faculdadefacec.edu.br"
+      PGADMIN_DEFAULT_PASSWORD: "postgres"
+    ports:
+      - "8080:80"
+    depends_on:
+      - server-postgres-1
+      - server-postgres-2
+    networks:
+      - pg-network
+
+networks:
+  pg-network:
+    driver: bridge
