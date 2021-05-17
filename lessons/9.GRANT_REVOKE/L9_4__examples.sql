@@ -1,26 +1,26 @@
 -- Dar permissao de select em todas as tabelas de um schema para determinado usuário
-grant select on all tables in schema public to "Geremias";
+grant select on all tables in schema public to "Jeremias";
 
-grant all privileges on all tables in schema public to "Geremias";
+grant all privileges on all tables in schema public to "Jeremias";
 
 -- Revoga permissao de select em todas as tabelas de um schema para determinado usuário
-revoke select on all tables in schema public from "Geremias";
+revoke select on all tables in schema public from "Jeremias";
 
 -- Dar permissao de insert em todas as tabelas de um schema para determinado usuário
-grant insert on all tables in schema public to "Geremias";
+grant insert on all tables in schema public to "Jeremias";
 
 -- Revoga permissao de select em todas as tabelas de um schema para determinado usuário
-revoke insert on all tables in schema public from "Geremias";
+revoke insert on all tables in schema public from "Jeremias";
 
-grant select on "Cidade" to "Geremias";
-revoke select on "Cidade" from "Geremias";
+grant select on "Cidade" to "Jeremias";
+revoke select on "Cidade" from "Jeremias";
 
-revoke all privileges on all tables in schema public from "Geremias";
+revoke all privileges on all tables in schema public from "Jeremias";
 
-grant all privileges on "Cidade" to "Geremias";
+grant all privileges on "Cidade" to "Jeremias";
 
-grant insert (nome, estado_fk) on table "Cidade" to "Geremias";
+grant insert (nome, estado_fk) on table "Cidade" to "Jeremias";
 
--- Para ver todos os privilegios dados ao usuario
+
 select * from information_schema.table_privileges
-where grantee = 'Geremias';
+where grantee = 'Jeremias';
