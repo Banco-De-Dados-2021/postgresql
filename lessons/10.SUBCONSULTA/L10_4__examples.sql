@@ -23,3 +23,24 @@ select c.nome, e.logradouro
 from "Cidade" c
          inner join (select cidade_fk, logradouro from "Endereco") e
                     on c.id = e.cidade_fk;
+
+---
+-- Exemplo de Select com union (irá distinguir os resultados que forem iguais)
+select id, nome from "Produto" p
+where  p.setor_fk = 2
+
+union
+
+select id, nome from "Produto" p
+where p.vencimento >= current_date;
+
+-- Exemplo de Select com union all (nao irá distinguir os resultados que forem iguais)
+select id, nome from "Produto" p
+where  p.setor_fk = 2
+
+union all
+
+select id, nome from "Produto" p
+where p.vencimento >= current_date;
+
+
